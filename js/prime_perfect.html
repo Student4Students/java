@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Question 28</title>
+        <script>
+            function calculate()
+            {
+                let no = document.getElementById("no").value;
+                if(document.getElementById("prime").checked)
+                {
+                    for(let i=2; i<=(no/2); i++)
+                    {
+                        if(no%i==0)
+                        {
+                            document.getElementById("result").innerHTML = "Not Prime Number";
+                            return;
+                        }
+                    }
+                            document.getElementById("result").innerHTML = "Prime Number";
+                            return;
+                }
+                else if(document.getElementById("perfect").checked)
+                {
+                    let sum=0;
+                    for(let i=0; i<no; i++)
+                    {
+                        if(no%i==0)
+                        {
+                            sum+=i;
+                        }
+                    }
+                    
+                    if(sum==no)
+                    {
+                        document.getElementById("result").innerHTML = "Perfect Number";
+                    }
+                    else
+                    {
+                        document.getElementById("result").innerHTML = "Not a Perfect Number";
+                    }
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <input type="text" id = "no"></input><br>
+        <input type="radio" id = "prime" name="operation">Prime</input><br>
+        <input type="radio" id = "perfect" name="operation">Perfect</input><br>
+        <button onclick = "calculate()">CALCULATE</button>
+        <p id="result"></p>
+    </body>
+</html>

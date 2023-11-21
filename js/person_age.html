@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Question 9</title>
+        <script>
+            class Person
+            {
+                constructor(name, age)
+                {
+                    this.name = name;
+                    this.age = age;
+                }
+                display()
+                {
+                    console.log("NAME: "+ this.name + " AGE: "+this.age + "\n");
+                }
+            }
+
+            const p1 = new Person("Jesse", 34);
+            const p2 = new Person("Pratik", 45);
+            const p3 = new Person("Aniket", 24);
+            let arr = Array(3);
+            arr[0] = p1;
+            arr[1] = p2;
+            arr[2] = p3;
+
+            console.log("Records");
+            for(let i=0; i<arr.length; i++)
+            {
+                arr[i].display();
+            }
+            let maxage=0;
+            let maxname;
+            function max()
+            {
+                for(let i=0; i<arr.length; i++)
+                {
+                    if(arr[i].age>maxage)
+                    {
+                        maxage = arr[i].age;
+                        maxname = arr[i].name;
+                    }
+                }
+                console.log("\nPerson with max age is: "+maxname);
+            }
+
+            max();
+        </script>
+    </head>
+    <body>
+
+    </body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Question 26</title>
+        <script>
+            function count()
+            {
+                let arr = document.getElementById("str").value.split(" ");
+                document.getElementById("res1").innerHTML = arr.length;
+            }
+            function desc()
+            {
+                let temp;
+                let arr = document.getElementById("arr").value.split(",");
+                for(let i=0; i<arr.length; i++)
+                {
+                    for(let j=0; j<arr.length-1; j++)
+                    {
+                        if(arr[j]<arr[j+1])
+                        {
+                            temp = arr[j];
+                            arr[j] = arr[j+1];
+                            arr[j+1] = temp;
+                        }
+                    }
+                }
+                document.getElementById("res2").innerHTML=arr;
+            }
+        </script>
+    </head>
+    <body>
+        Enter a string<br>
+        <input type="text" id ="str"></input><br>
+        <button onclick="count()">GET NUMBER OF WORDS</button>
+        <p id="res1"></p>
+        Enter array<br>
+        <input type="text" id ="arr" placeholder="EG. 1,2,3,4..."></input><br>
+        <button onclick="desc()">DESCENDING ORDER</button>
+        <p id="res2"></p>
+    </body>
+</html>

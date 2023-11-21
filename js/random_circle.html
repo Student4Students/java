@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Question 12</title>
+    </head>
+    <body>
+        <canvas height="700" width="700" id="mycan"></canvas>
+    </body>
+    <script>
+        function draw()
+        {
+            const can = document.getElementById("mycan");
+            const ctx = can.getContext("2d");
+
+            for(let i=0; i<50; i++)
+            {
+                ctx.beginPath();
+                ctx.arc(Math.random()*700, Math.random()*700, 40, 0, 2*Math.PI, true);
+                ctx.stroke();
+                ctx.fillStyle = "rgba(" + Math.random()*255 + ", " + Math.random()*255 + ", " + Math.random()*255 + ", " +Math.random()*1+")";
+                ctx.fill();
+            }
+        }
+        draw();
+    </script>
+</html>

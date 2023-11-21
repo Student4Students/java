@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diagonal Circles</title>
+    <style>
+        body {
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+        }
+    </style>
+</head>
+<body>
+
+<canvas id="diagonalCanvas" width="300" height="300"></canvas>
+
+<script>
+    // Get the canvas element and its context
+    var canvas = document.getElementById('diagonalCanvas');
+    var ctx = canvas.getContext('2d');
+
+    // Set the radius of the circles
+    var radius = 20;
+
+    // Draw diagonal circles
+    for (var i = 0; i < 6; i++) {
+        // Calculate the position of each circle
+        var x = i * (2 * radius + 10); // Adjust the spacing between circles
+        var y = i * (2 * radius + 10);
+
+        // Draw the circle
+        ctx.beginPath();
+        ctx.arc(x, y, radius, 0, 2 * Math.PI);
+        ctx.fillStyle = 'blue'; // Circle color
+        ctx.fill();
+        ctx.closePath();
+    }
+</script>
+
+</body>
+</html>

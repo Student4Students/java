@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Question 27</title>
+        <script>
+            class Student
+            {
+                constructor(name, id, major, gpa)
+                {
+                    this.name = name;
+                    this.id = id;
+                    this.major = major;
+                    this.gpa = gpa;
+                }
+                display()
+                {
+                    console.log("NAME: "+this.name+"\tID: "+this.id);
+                }
+            }
+
+            const s = new Student("Jesse", 101, "CompSci", 4.00);
+            s.display();
+            s.email = "jesse.moses23@pccoepune.org"
+            console.log(s.email);
+
+            function scholar(gpa)
+            {
+                if(gpa>3.5)
+                {
+                    return true;
+                }
+                return false;
+            }
+
+            if(scholar(s.gpa))
+            {
+                console.log("Eligible for scholarship");
+            }
+
+        </script>
+    </head>
+    <body>
+
+    </body>
+</html>

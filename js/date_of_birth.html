@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Question 16</title>
+        <script>
+            function block_dates()
+            {
+                const d = new Date();
+                let cal = document.getElementById("cal");
+                cal.max = d.toISOString().slice(0, 10);
+               
+
+            }
+            function get_age()
+            {
+                let cal = document.getElementById("cal").value;
+                // cal = new Date(cal);
+                // let month_diff = Date.now() - cal.getTime();
+                // let age_dt = new Date(month_diff);
+                // let year = age_dt.getUTCFullYear();
+                // let age = Math.abs(year-1970);
+
+                cal = new Date(cal);
+                let doby = cal.getYear();
+                let dobm = cal.getMonth();
+
+                const cur = new Date();
+                let cury = cur.getYear();
+                let curm = cur.getMonth();
+
+                let agey = cury-doby;
+                let agem = Math.abs(curm-dobm);
+                
+                document.getElementById("age").innerHTML = "AGE: " + agey + " years " + agem + " months";
+            }
+        </script>
+    </head>
+    <body onload="block_dates()">
+        Select DOB:<br>
+        <input type="date" id="cal"><br>
+        <button onclick="get_age()">CALCULATE AGE</button>
+        <p id = "age">AGE: </p>
+    </body>
+</html>

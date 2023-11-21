@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Question 11</title>
+    </head>
+    <body>
+        <canvas height="800" width="800" id="mycan"></canvas>
+    </body>
+    <script>
+        function smiley()
+        {
+            const can = document.getElementById("mycan");
+                const ctx = can.getContext("2d");
+                ctx.beginPath();
+                ctx.moveTo(150, 100);
+
+                ctx.arc(100, 100, 50, 0, 2*Math.PI, true);
+                ctx.moveTo(85, 80);
+                ctx.arc(80, 80, 5, 0, 2*Math.PI, true);
+                ctx.moveTo(125, 80);
+                ctx.arc(120, 80, 5, 0, 2*Math.PI, true);
+                ctx.moveTo(130, 105);
+                ctx.arc(100, 105, 30, 0, Math.PI, false);
+                ctx.stroke();
+        }
+        smiley();
+
+        function halfC()
+        {
+            const can = document.getElementById("mycan");
+            const ctx = can.getContext("2d");
+
+            ctx.beginPath();
+            ctx.moveTo(200, 50);
+            ctx.lineTo(300, 50);
+            ctx.arc(250, 50, 50, 0, Math.PI, false);
+            ctx.stroke();
+        }
+        halfC();
+
+        function poly()
+        {
+            const can = document.getElementById("mycan");
+            const ctx = can.getContext("2d");
+
+            ctx.beginPath();
+            ctx.moveTo(350, 50);
+            ctx.lineTo(450, 50);
+            ctx.lineTo(500, 120);
+            ctx.lineTo(450, 190);
+            ctx.lineTo(350, 190);
+            ctx.lineTo(300, 120);
+            ctx.lineTo(350, 50);
+            ctx.stroke();
+        }
+        poly();
+
+        function rect()
+        {
+            const can = document.getElementById("mycan");
+            const ctx = can.getContext("2d");
+
+            ctx.beginPath();
+            ctx.moveTo(600, 50);
+            ctx.lineTo(700, 50);
+            ctx.lineTo(700, 100);
+            ctx.lineTo(600, 100);
+            ctx.lineTo(600, 50);
+            const grd = ctx.createLinearGradient(650, 100, 650, 50);
+            grd.addColorStop(0, "blue");
+            grd.addColorStop(1, "red");
+            ctx.fillStyle = grd;
+            ctx.fill();
+            ctx.stroke();
+        }
+        rect();
+    </script>
+</html>

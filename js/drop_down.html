@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Question 32</title>
+        <script>
+            function display()
+            {
+                document.getElementById("add").innerHTML = "";
+                let n = document.getElementById("sel").value;
+                for(let i=0; i<parseInt(n); i++)
+                {
+                   document.getElementById("add").innerHTML += "<img src=\"image.jpg\" height=\"100px\" width=\"100px\"></img>"; 
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <select id="sel">
+            <option value = "1">one</option>
+            <option value = "2">two</option>
+            <option value = "3">three</option>
+            <option value = "4">four</option>
+            <option value = "5">five</option>
+        </select>
+        <button onclick="display()">DISPLAY</button>
+        <div id="add"></div>
+    </body>
+    </html>

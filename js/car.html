@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Question 10</title>
+        <script>
+            class Car
+            {
+                constructor(modname, price, type)
+                {
+                    this.modname = modname;
+                    this.price = price;
+                    this.type = type;
+                }
+                display()
+                {
+                    console.log("Model Name: "+this.modname+"\tPrice: "+this.price+"\tType: "+this.type+"\n");
+                }
+            }
+
+            let arr = new Array(3);
+            arr[0] = new Car("Swift", 34000, "Hatchback");
+            arr[1] = new Car("WagonR", 23888, "Compact");
+            arr[2] = new Car("Indigo", 45999, "Sedan");
+            for(let i=0; i<arr.length; i++)
+            {
+                arr[i].display();
+            }
+
+            let minprice = 9999999;
+            let minname = "";
+            function get_cheapest()
+            {
+                for(let i=0; i<arr.length; i++)
+                {
+                    if(arr[i].price<minprice)
+                    {
+                        minprice = arr[i].price;
+                        minname = arr[i].modname;
+                    }
+                }
+                console.log("Cheapest Car: "+minname);
+            }
+
+            get_cheapest();
+        </script>
+    </head>
+    <body>
+
+    </body>
+</html>

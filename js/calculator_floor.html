@@ -1,0 +1,43 @@
+<!DICTYPE html>
+<html>
+    <head>
+        <title>Question 15</title>
+        <script>
+            function sqrt()
+            {
+                let no = document.getElementById("no").value;
+                document.getElementById("result").innerHTML = Math.sqrt(no);
+            }
+            function pow()
+            {
+                let no = document.getElementById("no").value;
+                let p = prompt("Enter the power to be raised to: ");
+                document.getElementById("result").innerHTML = Math.pow(no, p);
+            }
+            function log()
+            {
+                let no = document.getElementById("no").value;
+                document.getElementById("result").innerHTML = Math.log(no);
+            }
+            function ceil()
+            {
+                let no = document.getElementById("no").value;
+                document.getElementById("result").innerHTML = Math.ceil(no);
+            }
+            function floor()
+            {
+                let no = document.getElementById("no").value;
+                document.getElementById("result").innerHTML = Math.floor(no);
+            }
+        </script>
+    </head>
+    <body>
+        <input type="text" plaveholder="enter a number" id="no"></input><br>
+        <button onclick="sqrt()">SQRT</button><br>
+        <button onclick="pow()">POWER</button><br>
+        <button onclick="log()">LOG</button><br>
+        <button onclick="ceil()">CEIL</button><br>
+        <button onclick="floor()">FLOOR</button><br>
+        <p id="result"></p>
+    </body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Question 33</title>
+        <style>
+            .target
+            {
+                height: 200px;
+                background-color: aqua;
+                width: 400px;
+                position: relative;
+            }
+            .target.active
+            {
+                transform: translateX(1000px);
+                transition: all 2s ease; 
+            }
+            .box
+            {
+                animation-duration: 6s;
+                animation-name: anim1;
+            }
+            @keyframes anim1
+            {
+                0%
+                {
+                    background-color: white;
+                    color: red;
+                    height: 300px;
+                    font-size: 20px;
+                }
+                50%
+                {
+                    background-color: blue;
+                    color: white;
+                    height: 200px;
+                    font-size: 70px;
+                }
+                100%
+                {
+                    background-color: purple;
+                    color: pink;
+                    height: 700px;
+                    font-size: 10px;
+                }
+            }
+        </style>
+        <script>
+            function move()
+            {
+                let target = document.querySelector('.target');
+                target.classList.add('active');
+            }
+        </script>
+    </head>
+    <body>
+        <div class="target">
+            <h1>Hello this is some text  in a div</h1>
+        </div>
+        <button onclick="move()">Click</button> 
+
+        <div class="box">
+            <p>This is some text</p>
+            <h2>Some more text</h2>
+        </div>
+    </body>
+</html>

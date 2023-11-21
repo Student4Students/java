@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Location and Greeting</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin: 50px;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>User Location and Greeting</h2>
+
+  <h3 id="location"></h3>
+  <h3 id="greeting"></h3>
+
+  <script>
+    // Get user location
+    function getUserLocation() {
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition);
+      } else {
+        document.getElementById("location").innerText = "Geolocation is not supported by this browser.";
+      }
+    }
+
+    function showPosition(position) {
+      var latitude = position.coords.latitude;
+      var longitude = position.coords.longitude;
+
+      document.getElementById("location").innerText = "Your Location: Latitude " + latitude + ", Longitude " + longitude;
+    }
+
+    // Greet the user based on the time of the day
+    function greetUser() {
+      var currentTime = new Date();
+      var currentHour = currentTime.getHours();
+      var greeting;
+
+      if (currentHour >= 5 && currentHour < 12) {
+        greeting = "Good Morning!";
+      } else if (currentHour >= 12 && currentHour < 17) {
+        greeting = "Good Afternoon!";
+      } else if (currentHour >= 17 && currentHour < 21) {
+        greeting = "Good Evening!";
+      } else {
+        greeting = "Good Night!";
+      }
+
+      document.getElementById("greeting").innerText = greeting;
+    }
+
+    // Call the functions when the page loads
+    window.onload = function() {
+      getUserLocation();
+      greetUser();
+    };
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rhombus</title>
+  <style>
+    canvas {
+      border: 1px solid #000;
+    }
+  </style>
+</head>
+<body>
+  <canvas id="rhombusCanvas" width="200" height="200"></canvas>
+
+  <script>
+    // Get the canvas element
+    const canvas = document.getElementById("rhombusCanvas");
+    const ctx = canvas.getContext("2d");
+
+    // Set line color to black
+    ctx.strokeStyle = "#000";
+
+    // Draw the rhombus
+    drawRhombus(100, 100, 80, 40);
+
+    function drawRhombus(x, y, width, height) {
+      ctx.beginPath();
+      ctx.moveTo(x, y - height / 2); // Top vertex
+      ctx.lineTo(x + width / 2, y); // Right vertex
+      ctx.lineTo(x, y + height / 2); // Bottom vertex
+      ctx.lineTo(x - width / 2, y); // Left vertex
+      ctx.closePath();
+      ctx.stroke();
+    }
+  </script>
+</body>
+</html>

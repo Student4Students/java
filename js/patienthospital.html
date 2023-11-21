@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Patient Admission Form</title>
+  <style>
+    label {
+      display: block;
+      margin-top: 10px;
+    }
+
+    input {
+      margin-bottom: 10px;
+    }
+
+    .error {
+      color: red;
+      margin-top: 5px;
+    }
+  </style>
+</head>
+<body>
+  <h2>Patient Admission Form</h2>
+  <form id="patientForm" onsubmit="return validateForm()">
+    <label for="patientID">Patient ID:</label>
+    <input type="text" id="patientID" name="patientID">
+
+    <label for="patientName">Patient Name:</label>
+    <input type="text" id="patientName" name="patientName">
+
+    <label for="address">Address:</label>
+    <input type="text" id="address" name="address">
+
+    <label for="city">City:</label>
+    <input type="text" id="city" name="city">
+
+    <label for="contactNumber">Contact Number:</label>
+    <input type="text" id="contactNumber" name="contactNumber">
+
+    <label for="dob">Date of Birth:</label>
+    <input type="date" id="dob" name="dob">
+
+    <label for="admissionDate">Admission Date:</label>
+    <input type="date" id="admissionDate" name="admissionDate">
+
+    <input type="submit" value="Submit">
+  </form>
+
+  <div id="errorMessages" class="error"></div>
+
+  <script>
+    function validateForm() {
+      var patientID = document.getElementById('patientID').value;
+      var patientName = document.getElementById('patientName').value;
+      var contactNumber = document.getElementById('contactNumber').value;
+      var dob = new Date(document.getElementById('dob').value);
+      var admissionDate = new Date(document.getElementById('admissionDate').value);
+      var errorMessages = '';
+
+      // Reset previous error messages
+      document.getElementById('errorMessages').innerHTML = '';
+
+      // Check if all fields are filled
+      if (!patientID || !patientName || !contactNumber || !dob || !admissionDate) {
+        errorMessages += 'All fields are required.<br>';
+      }
+
+      // Check length of ID
+      if (patientID.length <= 5) {
+        errorMessages += 'Patient ID should be more than 5 characters.<br>';
+      }
+
+      // Check if name has digits
+      if (/\d/.test(patientName)) {
+        errorMessages += 'Name should not have digits.<br>';
+      }
+
+      // Check if contact number has alphabets
+      if (/[a-zA-Z]/.test(contactNumber)) {
+        errorMessages += 'Contact number should not have alphabets.<br>';
+      }
+
+      // Check if admission date is greater than date of birth
+      if (admissionDate <= dob) {
+        errorMessages += 'Admission date should be greater than date of birth.<br>';
+      }
+
+      // Display error messages
+      if (errorMessages) {
+        document.getElementById('errorMessages').innerHTML = '<p class="error">' + errorMessages + '</p>';
+        return false;
+      }
+
+      // Form is valid, you can submit it
+      return true;
+    }
+  </script>
+</body>
+</html>

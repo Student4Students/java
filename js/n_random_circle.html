@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Question 31</title>
+        
+    </head>
+    <body>
+        
+        NUMBER OF CIRCLES:<br>
+        <input type="text" id="n"></input><br>
+        RADIUS:<br>
+        <input type="text" id="r"></input><br>
+        <button onclick="draw()">DRAW</button><br>
+        <canvas height="500" width="500" id="mycan"></canvas>
+    </body>
+    <script>
+        function draw()
+        {
+            const can = document.getElementById("mycan");
+            const ctx = can.getContext("2d");
+
+            let n = document.getElementById("n").value;
+            let r = document.getElementById("r").value;
+            for(let i=0; i<n; i++)
+            {
+                ctx.beginPath();
+                ctx.arc(Math.random()*500, Math.random()*500, r, 0, 2*Math.PI, true);
+                ctx.stroke();
+            }
+        }
+        
+    </script>
+</html>

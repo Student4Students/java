@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Number Conversion</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin: 50px;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Number Conversion</h2>
+  
+  <label for="numberInput">Enter a number:</label>
+  <input type="number" id="numberInput" placeholder="Enter a number">
+
+  <br>
+
+  <input type="radio" id="doubleRadio" name="conversionType" value="double" checked>
+  <label for="doubleRadio">Double</label>
+
+  <input type="radio" id="squareRadio" name="conversionType" value="square">
+  <label for="squareRadio">Square</label>
+
+  <br>
+
+  <button onclick="convertNumber()">Convert</button>
+
+  <p id="result"></p>
+
+  <script>
+    function convertNumber() {
+      // Get the input value
+      var inputValue = document.getElementById("numberInput").value;
+
+      // Convert the input value based on the selected radio button
+      var conversionType = document.querySelector('input[name="conversionType"]:checked').value;
+      var result;
+
+      if (conversionType === "double") {
+        result = inputValue * 2;
+      } else if (conversionType === "square") {
+        result = inputValue * inputValue;
+      }
+
+      // Display the result
+      document.getElementById("result").innerText = "Result: " + result;
+    }
+  </script>
+
+</body>
+</html>

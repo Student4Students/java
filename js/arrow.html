@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Question 25</title>
+    </head>
+    <body>
+        <canvas height="700" width="700" id="mycan"></canvas>
+    </body>
+    <script>
+        const can = document.getElementById("mycan");
+        const ctx = can.getContext("2d");
+
+        ctx.beginPath();
+        ctx.moveTo(100, 80);
+
+        ctx.lineTo(300, 80);
+        ctx.lineTo(300, 50);
+        ctx.lineTo(375, 125);
+        ctx.lineTo(300, 200);
+        ctx.lineTo(300, 165);
+        ctx.lineTo(100, 165);
+        ctx.lineTo(150, 125);
+        ctx.lineTo(100, 80);
+        ctx.closePath();
+        ctx.stroke();
+
+        ctx.moveTo(500, 100);
+        ctx.lineTo(600, 100);
+        ctx.lineTo(575, 200);
+        ctx.lineTo(475, 200);
+        ctx.lineTo(500, 100);
+        ctx.stroke();
+    </script>
+</html>
